@@ -9,4 +9,4 @@ Anyone can contribute by sending a PR.
 
 ##Disclaimer
 
-As with many things in programming, pattern implementation can be pretty subjective. The main takeway is that each pattern solves a particular pain point commonly found in modern object-oriented programming.
+As with many things in programming, pattern implementations can be pretty subjective. The main takeway is that each pattern solves a particular pain point commonly found in modern object-oriented programming.
