@@ -8,12 +8,14 @@ Let's say Acme Corp has shipped a cool new SDK. Inside the SDK is a model called
 
 You then update your code to use the new signature and everything works again or at least until the next change. This is not ideal for anyone. Wouldn't it be great to not have to change your app when Acme decides to change how `Foo` needs to be used?
 
+Even better, wouldn't it be amazing if Acme could change `Foo` to `Bar` and you don't have to modify your code?
+
 The factory pattern allows for the user to delegate the creation of an object and allows the factory creator to tinker and change the implementation details so long as it returns an interface or abstract class.
 
 ##Pros
 
-Read the scenario above :)
+Developers only have to commit to an interface instead of a concrete class allowing the factory owner to make any changes they wish so long as they return an instance of the interface (or abstract class).
 
 ##Cons
 
-Requires the use of interface/abstract class and a factory method which will be a bit more involved.
+Requires the use of interface/abstract class and a factory method which will be a bit more involved (but not that much effor).
