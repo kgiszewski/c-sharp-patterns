@@ -1,6 +1,6 @@
 # Singleton
 
-##Examples Usages
+##Example Usages
 The Singleton pattern is a good option to use when you'd like to restrict the creation of an object to only one instance. 
 
 It can also be used to create a service that persists throughout the life of the application.
