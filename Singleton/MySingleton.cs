@@ -4,7 +4,10 @@ namespace Singleton
 {
     public class MySingleton
     {
+        //this will hold the internal instance of our singleton
         private static volatile MySingleton _instance;
+
+        //this is used purely for thread safety
         private static object _padLock = new Object();
 
         //you can create as many properties as you'd like
@@ -29,10 +32,13 @@ namespace Singleton
                         if (_instance == null)
                         {
                             //this will only run if the singleton has never been initialized or has been set to null
+                            //otherwise this code will never run after the first time
                             Console.WriteLine("Initializing singleton...");
 
+                            //create an instance and set it to your private member
                             _instance = new MySingleton();
 
+                            //set the values of any properties you have
                             _instance.PropertyOne = "Hello World!";
                         }
                     }
@@ -46,6 +52,8 @@ namespace Singleton
         public void Clear()
         {
             Console.WriteLine("Clearing singleton...");
+
+            //by setting this to null, the next thread that uses this singleton will cause it to reinitialize
             _instance = null;
         }
     }
