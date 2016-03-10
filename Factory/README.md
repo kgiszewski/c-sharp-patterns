@@ -4,7 +4,7 @@ The factory pattern is designed to abstract away object creation to another obje
 
 ##Example Usages
 
-Let's say Acme Corp has shipped a cool new SDK. Inside the SDK is a model called `Foo`. You decided to build an app against this SDK and create a bunch of `Foo` objects with `new Foo()`. Everything works great but then a feature update arrives from Acme and it contains a breaking change because instead of `Foo`, you now need to use `Foo` with a parameter.
+Let's say Acme Corp has shipped a cool new SDK. Inside the SDK is a model called `Foo`. You decided to build an app against this SDK and create a bunch of `Foo` objects with `new Foo()`. Everything works great but then a feature update arrives from Acme and it contains a breaking change because you now need to use `Foo` with a parameter.
 
 You then update your code to use the new signature and everything works again or at least until the next change. This is not ideal for anyone. Wouldn't it be great to not have to change your app when Acme decides to change how `Foo` needs to be used?
 
