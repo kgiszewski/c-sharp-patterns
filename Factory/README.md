@@ -12,6 +12,8 @@ Even better, wouldn't it be amazing if Acme could change `Foo` to `Bar` and you 
 
 The factory pattern allows for the user to delegate the creation of an object and allows the factory creator to tinker and change the implementation details so long as it returns an interface or abstract class.
 
+Note: If you have control over all of the code, this might be overkill.
+
 ##Pros
 
 Developers only have to commit to an interface instead of a concrete class allowing the factory owner to make any changes they wish so long as they return an instance of the interface (or abstract class).
