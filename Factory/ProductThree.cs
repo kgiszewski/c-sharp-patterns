@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Factory
+namespace AbstractFactory
 {
     //a generic model that implements IProduct
     public class ProductThree : IProduct

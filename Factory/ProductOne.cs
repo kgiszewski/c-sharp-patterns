@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Factory
+namespace AbstractFactory
 {
     //a generic model that implements IProduct
-    public class ProductOne
+    public class ProductOne : IProduct
     {
         public void MyMethod()
         {

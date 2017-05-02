@@ -1,0 +1,6 @@
+﻿namespace SimpleFactory
+{
+    class Bar
+    {
+    }
+}

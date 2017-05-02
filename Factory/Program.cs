@@ -1,4 +1,4 @@
-﻿namespace Factory
+﻿namespace AbstractFactory
 {
     class Program
     {
@@ -18,8 +18,10 @@
             //the client application.
 
             //this returns ProductTwo but could just as well return ProductThree and no changes would be needed to the code below.
-            IProduct myFactoryProduct = MyFactory.Create();
+            IProduct myFactoryProduct = MyAbstractFactory.Create();
             myFactoryProduct.MyMethod();
+
+            //we can make this even sexier if we want some sort of condition to dictate what the factory should return
         }
     }
 }
