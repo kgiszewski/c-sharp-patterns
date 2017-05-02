@@ -1,15 +1,15 @@
 namespace PoorMansDependencyInjection
 {
-    class BetterFoo : IFoo
+    class BestFoo : IFoo
     {
         private readonly IBar _bar;
 
-        public BetterFoo()
+        public BestFoo()
             : this(new Bar())
         {
         }
 
-        public BetterFoo(IBar bar)
+        public BestFoo(IBar bar)
         {
             _bar = bar;
         }
