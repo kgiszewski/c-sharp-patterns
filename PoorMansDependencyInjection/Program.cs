@@ -27,6 +27,14 @@
             //as-is, betterFoo2 will use Bar as the IBar impl, however if I want to use Bar2 instead, I can do the following
             betterFoo2.Bar = new Bar2();
             betterFoo2.Blah();
+
+            //as my buddy @bleedo (on Twitter) pointed out, you can have yet another way to have a better foo. BestFoo has a default constructor
+            //with the ability to pass dependencies via an overloaded constructor
+            var bestFoo = new BestFoo();
+            bestFoo.Blah();
+
+            bestFoo = new BestFoo(new Bar2());
+            bestFoo.Blah();
         }
     }
 }

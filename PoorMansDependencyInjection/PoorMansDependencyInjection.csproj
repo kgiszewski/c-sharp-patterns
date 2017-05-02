@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Bar.cs" />
     <Compile Include="Bar2.cs" />
+    <Compile Include="BestFoo.cs" />
     <Compile Include="BetterFoo.cs" />
     <Compile Include="BetterFoo2.cs" />
     <Compile Include="Foo.cs" />
