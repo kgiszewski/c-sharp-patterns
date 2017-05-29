@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoorMansDependencyInjection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitor", "Visitor\Visitor.csproj", "{E7D10BB4-41D9-45BE-9219-6ABA1858D4C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{E742DE42-717D-4560-87E9-0AECE9DCD6E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{E7D10BB4-41D9-45BE-9219-6ABA1858D4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7D10BB4-41D9-45BE-9219-6ABA1858D4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7D10BB4-41D9-45BE-9219-6ABA1858D4C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E742DE42-717D-4560-87E9-0AECE9DCD6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E742DE42-717D-4560-87E9-0AECE9DCD6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E742DE42-717D-4560-87E9-0AECE9DCD6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E742DE42-717D-4560-87E9-0AECE9DCD6E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
