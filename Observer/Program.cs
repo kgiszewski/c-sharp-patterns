@@ -11,6 +11,8 @@
             new BubbleObserver(unicornDancer);
             new UnicornObserver(unicornDancer);
 
+            //You could create an observer to send these events to Slack. Only the SlackObserver would need to know about Slack.
+
             /*
              * You may have a ton of other code in between the observer registrations and the actual execution of the observed class
              */
