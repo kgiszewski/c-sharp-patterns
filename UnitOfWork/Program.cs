@@ -47,6 +47,7 @@ namespace UnitOfWork
                     repo.Delete(entity);
 
                     //if we don't make it here or this is never called, the transaction gets rolled back
+                    uow.Commit();
                 }
             }
 
