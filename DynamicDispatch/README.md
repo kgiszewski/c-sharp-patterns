@@ -9,6 +9,8 @@ Dynamic dispatch allows for a one-time setup of a 'dispatcher' that routes a pub
 
 Subsequent message\handler pairs can be created quickly.
 
+i.e. `FooMessage` gets published and handled by `IHandleMessages<FooMessage>`
+
 ## Common Uses
 
 Messaging systems can send\receive messages that get handled by the appropriate handler class. 
