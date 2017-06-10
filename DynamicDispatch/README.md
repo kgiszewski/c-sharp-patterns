@@ -18,3 +18,5 @@ Messaging systems can send\receive messages that get handled by the appropriate 
 This allows for quick and easy publish\handle pattern.
 
 The example contained can be modified to publish data on one box and the handlers on another box. To do that will require a transport such as a queue or http and the appropriate serialization.
+
+Combined with threading you can make a high-performance service router.
