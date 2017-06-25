@@ -7,7 +7,7 @@ namespace Strategy
         static void Main(string[] args)
         {
             //for this example we are creating two henchmen and bad guys that will appear in a video game
-            //each henchmen\bad guy normally moves side to side, but for henchmen\bad guys named 'Dave', then get to move up and down.
+            //each henchmen\bad guy normally moves side to side, but for henchmen\bad guys named 'Dave', they get to move up and down.
 
             //henchmen do not use a strategy pattern
             var daveHenchman = new Henchman
