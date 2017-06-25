@@ -1,0 +1,12 @@
+# Strategy
+
+## Problem it solves
+Often times we will write a class then ends up having quite a bit of conditional logic and separates one behavior from another. 
+This leads to having classes that try to do more than one behavior. The stategy pattern allows us to encapsulate each behvior as a discrete class that we can assign to another.
+
+## Common Uses
+When more than one distinct behavior is possible based on some sort of condition, it is much cleaner to refactor the behaviors into their own class.
+In the video game world, you may want Goomba's to react a certain way to a character while having Bowser react another. Rather than put all of that into a single class, you can put each behvavior into its own class.
+
+In finance, you may want checking accounts to handle overdrawns accounts differently based upon their account type. For example, a free checking account may have a fee incurred while a premium account may have forgiveness up to a point.
+Each behavior can be handled separately without having a mess of if\then\else\switch statements.
