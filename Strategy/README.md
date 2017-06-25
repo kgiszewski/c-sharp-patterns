@@ -1,7 +1,7 @@
 # Strategy
 
 ## Problem it solves
-Often times we will write a class then ends up having quite a bit of conditional logic handles many behaviors via if\then\else\switch. 
+Often times we will write a class then ends up having quite a bit of conditional logic that handles many behaviors via if\then\else\switch. 
 This leads to having classes that are long with trapped logic. The strategy pattern allows us to encapsulate each behavior as a discrete class that we can assign to another which makes it easier to read and the code becomes portable.
 
 ## Common Uses
