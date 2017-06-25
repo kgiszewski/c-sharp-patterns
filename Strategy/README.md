@@ -1,8 +1,8 @@
 # Strategy
 
 ## Problem it solves
-Often times we will write a class then ends up having quite a bit of conditional logic and separates one behavior from another. 
-This leads to having classes that try to do more than one behavior. The strategy pattern allows us to encapsulate each behavior as a discrete class that we can assign to another.
+Often times we will write a class then ends up having quite a bit of conditional logic handles many behaviors via if\then\else\switch. 
+This leads to having classes that are long with trapped logic. The strategy pattern allows us to encapsulate each behavior as a discrete class that we can assign to another which makes it easier to read and the code becomes portable.
 
 ## Common Uses
 When more than one distinct behavior is possible based on some sort of condition, it is much cleaner to refactor the behaviors into their own classes.
