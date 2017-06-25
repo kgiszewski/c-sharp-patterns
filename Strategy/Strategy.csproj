@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BadGuy.cs" />
     <Compile Include="BadGuyFactory.cs" />
+    <Compile Include="Henchman.cs" />
     <Compile Include="IBadGuy.cs" />
     <Compile Include="MovementStrategies\IMovementStrategy.cs" />
     <Compile Include="MovementStrategies\SideToSideStrategy.cs" />
