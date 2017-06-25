@@ -2,24 +2,24 @@
 
 namespace Singleton
 {
-    public class MySingleton
+    public class ThreadSafeSingleton
     {
         //this will hold the internal instance of our singleton
-        private static volatile MySingleton _instance;
+        private static volatile ThreadSafeSingleton _instance;
 
         //this is used purely for thread safety
-        private static object _padLock = new Object();
+        private static readonly object _padLock = new object();
 
         //you can create as many properties as you'd like
         public string PropertyOne;
         
         //note that the constructor is private and only the class itself can create a new instance
-        private MySingleton()
+        private ThreadSafeSingleton()
         {
         }
 
         //this is where the instance will live, notice the return value is the singleton class itself
-        public static MySingleton Instance
+        public static ThreadSafeSingleton Instance
         {
             get
             {
@@ -36,7 +36,7 @@ namespace Singleton
                             Console.WriteLine("Initializing singleton...");
 
                             //create an instance and set it to your private member
-                            _instance = new MySingleton();
+                            _instance = new ThreadSafeSingleton();
 
                             //set the values of any properties you have
                             _instance.PropertyOne = "Hello World!";

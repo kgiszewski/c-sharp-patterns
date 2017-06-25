@@ -42,9 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NonThreadSafeSingleton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MySingleton.cs" />
+    <Compile Include="ThreadSafeSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

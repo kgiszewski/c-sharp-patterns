@@ -6,13 +6,21 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(MySingleton.Instance.PropertyOne); //hello world
+            //many times we should use a thread safe implementation
+            Console.WriteLine(ThreadSafeSingleton.Instance.PropertyOne); //hello world
 
-            Console.WriteLine(MySingleton.Instance.PropertyOne); //hello world
+            Console.WriteLine(ThreadSafeSingleton.Instance.PropertyOne); //hello world
 
-            MySingleton.Instance.Clear(); //will require a re-initialization on the next usage
+            ThreadSafeSingleton.Instance.Clear(); //will require a re-initialization on the next usage
 
-            Console.WriteLine(MySingleton.Instance.PropertyOne); //hello world
+            Console.WriteLine(ThreadSafeSingleton.Instance.PropertyOne); //hello world
+
+            //we can also use a non-thread safe singleton if you need to but you'll wanna understand when this is ok
+            NonThreadSafeSingleton.Instance.PropertyOne = "Foo";
+
+            Console.WriteLine(NonThreadSafeSingleton.Instance.PropertyOne);
+
+            Console.ReadKey();
         }
     }
 }
