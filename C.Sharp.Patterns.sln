@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid", "Solid\Solid.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strategy.csproj", "{202078D6-BF8C-4D11-931E-A6A7BFB98B1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pipeline", "Pipeline\Pipeline.csproj", "{91D2F6F9-7E2B-44D9-A6B8-12626B786139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{202078D6-BF8C-4D11-931E-A6A7BFB98B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{202078D6-BF8C-4D11-931E-A6A7BFB98B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{202078D6-BF8C-4D11-931E-A6A7BFB98B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
