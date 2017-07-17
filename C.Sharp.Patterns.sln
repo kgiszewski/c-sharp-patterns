@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pipeline", "Pipeline\Pipeline.csproj", "{91D2F6F9-7E2B-44D9-A6B8-12626B786139}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbVersionMigration", "DbVersionMigration\DbVersionMigration.csproj", "{52D003BC-DA68-4BF6-A46F-07923FF2885E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91D2F6F9-7E2B-44D9-A6B8-12626B786139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
