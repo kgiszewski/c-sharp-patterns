@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Composed\EnhancedOrder1Composed.cs" />
+    <Compile Include="Composed\EnhancedOrder1ComposedAlternate.cs" />
     <Compile Include="IAddress.cs" />
     <Compile Include="Inherited\EnhancedOrder1Inherited.cs" />
     <Compile Include="Inherited\Order1.cs" />

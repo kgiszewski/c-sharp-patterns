@@ -22,18 +22,35 @@ namespace CompositionOverInheritance
             var order1 = new Order1();
 
             //inheritance
-            var order1Enhanced = new EnhancedOrder1Inherited();
+            var order1EnhancedInherited = new EnhancedOrder1Inherited();
 
             //composition
-            var order2Enhanced = new EnhancedOrder1Composed();
+            var order1EnhancedComposed = new EnhancedOrder1Composed();
+
+            //another way to compose is to wrap the original that I tend to prefer
+            var order1EnhancedComposedAlternate = new EnhancedOrder1ComposedAlternate
+            {
+                Order = new Order1()
+            };
             
 
             //only to show each one being used
             var processor = new OrderProcessor();
 
+            //base
             processor.Process(order1);
-            processor.Process((IOrderEnhanced)order1Enhanced);
-            processor.Process((IOrderEnhanced)order2Enhanced);
+            
+            //inherited
+            processor.Process((IOrder)order1EnhancedInherited);
+            processor.Process((IOrderEnhanced)order1EnhancedInherited);
+            
+            //composed
+            processor.Process((IOrder)order1EnhancedComposed);
+            processor.Process((IOrderEnhanced)order1EnhancedComposed);
+
+            //composed alternate
+            processor.Process(order1EnhancedComposedAlternate.Order);
+            processor.Process(order1EnhancedComposedAlternate);
 
             Console.ReadKey();
         }
