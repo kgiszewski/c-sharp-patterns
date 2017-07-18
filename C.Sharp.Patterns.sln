@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pipeline", "Pipeline\Pipeli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbVersionMigration", "DbVersionMigration\DbVersionMigration.csproj", "{52D003BC-DA68-4BF6-A46F-07923FF2885E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionOverInheritance", "CompositionOverInheritance\CompositionOverInheritance.csproj", "{9381B46C-2EF6-434C-B1E9-A3853DA3190D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52D003BC-DA68-4BF6-A46F-07923FF2885E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
