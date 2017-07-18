@@ -38,6 +38,15 @@ namespace DbVersionMigration
             migrationManager.HandleMigrations(currentDbVersion, 1);
             currentDbVersion = 1;
 
+            //let's go all the way up
+            migrationManager.HandleMigrations(currentDbVersion, 3);
+            currentDbVersion = 3;
+
+            //all the way down
+            migrationManager.HandleMigrations(currentDbVersion, 0);
+            currentDbVersion = 0;
+
+
             Console.ReadKey();
         }
     }

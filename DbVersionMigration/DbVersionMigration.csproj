@@ -46,6 +46,8 @@
     <Compile Include="IMigration.cs" />
     <Compile Include="IMigrationManager.cs" />
     <Compile Include="MigrationManager.cs" />
+    <Compile Include="Migrations\MigrationAttribute.cs" />
+    <Compile Include="Migrations\Version0003.cs" />
     <Compile Include="Migrations\Version0002.cs" />
     <Compile Include="Migrations\Version0001.cs" />
     <Compile Include="Program.cs" />
