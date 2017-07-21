@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbVersionMigration", "DbVer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionOverInheritance", "CompositionOverInheritance\CompositionOverInheritance.csproj", "{9381B46C-2EF6-434C-B1E9-A3853DA3190D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{11694A72-4733-491C-811C-F103556FCAAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9381B46C-2EF6-434C-B1E9-A3853DA3190D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11694A72-4733-491C-811C-F103556FCAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11694A72-4733-491C-811C-F103556FCAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11694A72-4733-491C-811C-F103556FCAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11694A72-4733-491C-811C-F103556FCAAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
