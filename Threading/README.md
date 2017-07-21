@@ -8,4 +8,4 @@ A web application can serve more than one request at a time due to threading. Ot
 
 The example contained uses creates a thread pool with the `Thread` class and keeps track of the work before exiting.
 
-Threads are not commonly used at this level. You should also have a look at [ThreadPool](https://msdn.microsoft.com/en-us/library/system.threading.threadpool(v=vs.110).aspx) and Tasks.
+Threads are not commonly used at this level. You should also have a look at [ThreadPool](https://msdn.microsoft.com/en-us/library/system.threading.threadpool(v=vs.110).aspx) and [Tasks](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx) which are abstracted uses of Threads.
