@@ -6,50 +6,63 @@ namespace Threading
 {
     class Program
     {
+        private static readonly IManageThreads _threadManager = new ThreadManager();
+        private static int _mainThreadId;
+
         static void Main(string[] args)
         {
-            Console.WriteLine($"Main thread Id: {Thread.CurrentThread.ManagedThreadId}");
+            var rand = new Random();
 
-            var mySomethingDoer = new DoSomething
+            _mainThreadId = Thread.CurrentThread.ManagedThreadId;
+
+            Console.WriteLine($"Main thread Id: {_mainThreadId}");
+            
+            //queue up 10 things that need done
+            for (var i = 1; i < 10; i++)
             {
-                Name = "Thing 1",
-                SleepFactor = 100
-            };
+                _threadManager.Queue(new DoSomething
+                {
+                   Id = i,
+                   SleepFactor = rand.Next(1, 5) * 1000
+                });
+            }
+            
+            //work thru the queue, use 2 max threads
+            _threadManager.ProcessQueue(_workerBee, 5);
 
-            var mySomethingDoer2 = new DoSomething
-            {
-                Name = "Thing 2",
-                SleepFactor = 1000
-            };
-
-            var mySomethingDoer3 = new DoSomething
-            {
-                Name = "Thing 3",
-                SleepFactor = 1000
-            };
-
-            var mySomethingDoer4 = new DoSomething
-            {
-                Name = "Thing 4",
-                SleepFactor = 100
-            };
-
-            var threadManager = new ThreadManager();
-
-            threadManager.Queue(mySomethingDoer);
-            threadManager.Queue(mySomethingDoer2);
-            threadManager.Queue(mySomethingDoer3);
-            threadManager.Queue(mySomethingDoer4);
-
-            threadManager.ProcessQueue();
-
-            while (threadManager.NumberThreadsRunning > 0)
+            //since work is outside of this thread, we have to wait for the other threads to finish
+            while (_threadManager.NumberThreadsRunning > 0)
             {
                 
             }
 
             Console.WriteLine("All threads complete.");
+            Console.WriteLine($"Current number of threads: {_threadManager.NumberThreadsRunning}, Max Threads: {_threadManager.MaxConcurrentThreads}");
             Console.ReadKey();
+        }
+
+        //this is the method that does the work
+        //many threads will be in this method at the same time, so don't assume you get to do whatever you want with out locking
+        //work inside the DoSomething class should be thread-safe already
+        private static void _workerBee(object o)
+        {
+            //illustrating that the main thread and this method should always be different threads
+            if (_mainThreadId == Thread.CurrentThread.ManagedThreadId)
+            {
+                throw new Exception("This shouldn't be the case!");
+            }
+
+            //the thread manager is using objects, so we need to cast
+            var myDoerClass = o as DoSomething;
+
+            myDoerClass?.Process();
+
+            //this could be done differently if we choose to want to remove it
+            //perhaps raise an event that the thread manager subscribes to
+            //otherwise I don't see an easy way for the thread to be removed from the manager
+            _threadManager.RemoveThread();
+
+            Thread.Sleep(5000);
         }
     }
 }

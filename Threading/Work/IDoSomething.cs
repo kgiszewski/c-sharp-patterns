@@ -2,7 +2,7 @@
 {
     public interface IDoSomething
     {
-        string Name { get; set; }
+        int Id { get; set; }
         int SleepFactor { get; set; }
         void Process();
     }
