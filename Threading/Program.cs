@@ -28,6 +28,8 @@ namespace Threading
             }
             
             //work thru the queue, set max threads
+            //the _workerBee method gets run by a new thread
+            //the work object will get injected as an arg
             _threadManager.ProcessQueue(_workerBee, 5);
 
             //since work is outside of this thread, we have to wait for the other threads to finish
@@ -42,23 +44,23 @@ namespace Threading
         }
 
         //this is the method that does the work
-        //many threads will be in this method at the same time, so don't assume you get to do whatever you want with out locking
+        //many threads will be in this method at the same time, so don't assume you get to do whatever you want without locking
         //work inside the DoSomething class should be thread-safe already
         private static void _workerBee(object o)
         {
-            //illustrating that the main thread and this method should always be different threads
+            //illustrating that the main thread and this method should always be executing on different threads
             if (_mainThreadId == Thread.CurrentThread.ManagedThreadId)
             {
                 throw new Exception("This shouldn't be the case!");
             }
 
-            //the thread manager is using objects, so we need to cast
+            //the thread manager is using <object>, so we need to cast
             var myDoerClass = o as DoSomething;
 
             myDoerClass?.Process();
 
-            //this could be done differently if we choose to want to remove it
-            //perhaps raise an event that the thread manager subscribes to
+            //this could be done differently if we want the worker method to know nothing about thread management
+            //perhaps we could raise an event that the thread manager subscribes to
             //otherwise I don't see an easy way for the thread to be removed from the manager
             _threadManager.RemoveThread();
 
