@@ -27,7 +27,7 @@ namespace Threading
                 });
             }
             
-            //work thru the queue, use 2 max threads
+            //work thru the queue, set max threads
             _threadManager.ProcessQueue(_workerBee, 5);
 
             //since work is outside of this thread, we have to wait for the other threads to finish
