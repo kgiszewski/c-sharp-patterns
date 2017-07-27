@@ -1,10 +1,9 @@
-﻿using System;
-using PetaPoco;
+﻿using PetaPoco;
 
-namespace DAL
+namespace UnitOfWork.DAL
 {
     //NOTE: this class is a wrapper for PetaPoco transactions
-    public class PetaPocoUnitOfWork : IDisposable
+    public class PetaPocoUnitOfWork : IUnitOfWork
     {
         private readonly Transaction _petaTransaction;
         private readonly Database _database;
@@ -29,10 +28,7 @@ namespace DAL
             _petaTransaction.Dispose();
         }
 
-        public Database Database
-        {
-            get { return _database; }
-        }
+        public IDatabase Database => _database;
 
         public void Commit()
         {

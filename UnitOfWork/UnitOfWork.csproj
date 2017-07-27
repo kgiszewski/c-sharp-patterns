@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\PetaPocoUnitOfWork.cs" />
+    <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="Models\MyDbEntity.cs" />
     <Compile Include="Models\MyOtherDbEntity.cs" />
     <Compile Include="DAL\PetaPoco.cs" />

@@ -1,4 +1,4 @@
-﻿using DAL;
+﻿using UnitOfWork.DAL;
 using UnitOfWork.Models;
 using UnitOfWork.Repositories;
 
@@ -12,9 +12,9 @@ namespace UnitOfWork
             using (var uow = new PetaPocoUnitOfWork())
             {
                 //get an instance of a repo
-                var repo = new FooRepository(uow);
+                var repo = new FooRepository();
 
-                var entity = repo.Get(2);
+                var entity = repo.Get(uow, 2);
 
                 //no committing is necessary on a SELECT
             }
@@ -22,13 +22,13 @@ namespace UnitOfWork
             //let's save something
             using (var uow = new PetaPocoUnitOfWork())
             {
-                var repo = new FooRepository(uow);
+                var repo = new FooRepository();
 
-                var entity = repo.Get(0) ?? new MyDbEntity();
+                var entity = repo.Get(uow, 0) ?? new MyDbEntity();
 
                 entity.Name = "Minnie Mouse";
 
-                repo.Save(entity);
+                repo.Save(uow, entity);
 
                 //we need to commit our changes or else it won't be saved!
                 //if the code throws before this point, the entire transaction is rolled back
@@ -38,13 +38,13 @@ namespace UnitOfWork
             //let's delete something
             using (var uow = new PetaPocoUnitOfWork())
             {
-                var repo = new FooRepository(uow);
+                var repo = new FooRepository();
 
-                var entity = repo.Get(2);
+                var entity = repo.Get(uow, 2);
 
                 if (entity != null)
                 {
-                    repo.Delete(entity);
+                    repo.Delete(uow, entity);
 
                     //if we don't make it here or this is never called, the transaction gets rolled back
                     uow.Commit();
@@ -55,21 +55,21 @@ namespace UnitOfWork
             using (var uow = new PetaPocoUnitOfWork())
             {
                 //look, we need to manipulate TWO repos in the same transaction
-                var fooRepo = new FooRepository(uow);
-                var barRepo = new BarRepository(uow);
+                var fooRepo = new FooRepository();
+                var barRepo = new BarRepository();
 
-                var entity = fooRepo.Get(0) ?? new MyDbEntity();
+                var entity = fooRepo.Get(uow, 0) ?? new MyDbEntity();
 
                 entity.Name = "Minnie Mouse";
 
-                fooRepo.Save(entity);
+                fooRepo.Save(uow, entity);
 
                 var phoneNumber = new MyOtherDbEntity
                 {
                     PhoneNumber = "5558675309"
                 };
 
-                barRepo.Save(phoneNumber);
+                barRepo.Save(uow, phoneNumber);
 
                 //we need to commit our changes or else it won't be saved!
                 //if the code throws before this point, the entire transaction is rolled back

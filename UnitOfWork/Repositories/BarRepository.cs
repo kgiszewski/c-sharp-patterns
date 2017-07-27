@@ -1,19 +1,12 @@
 ﻿using System.Linq;
-using DAL;
+using UnitOfWork.DAL;
 using UnitOfWork.Models;
 
 namespace UnitOfWork.Repositories
 {
     public class BarRepository
     {
-        private readonly PetaPocoUnitOfWork _unitOfWork;
-
-        public BarRepository(PetaPocoUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
-
-        public MyOtherDbEntity Get(long id)
+        public MyOtherDbEntity Get(IUnitOfWork uow, long id)
         {
             var sql = @"
                 SELECT *
@@ -21,17 +14,17 @@ namespace UnitOfWork.Repositories
                 WHERE id = @id
             ";
 
-            return _unitOfWork.Database.Fetch<MyOtherDbEntity>(sql, new { id = id }).SingleOrDefault();
+            return uow.Database.Fetch<MyOtherDbEntity>(sql, new { id = id }).SingleOrDefault();
         }
 
-        public void Save(MyOtherDbEntity entity)
+        public void Save(IUnitOfWork uow, MyOtherDbEntity entity)
         {
-            _unitOfWork.Database.Save(entity);
+            uow.Database.Save(entity);
         }
 
-        public void Delete(MyOtherDbEntity entity)
+        public void Delete(IUnitOfWork uow, MyOtherDbEntity entity)
         {
-            _unitOfWork.Database.Delete(entity);
+            uow.Database.Delete(entity);
         }
     }
 }

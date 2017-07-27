@@ -1,6 +1,5 @@
-﻿using System;
-using System.Linq;
-using DAL;
+﻿using System.Linq;
+using UnitOfWork.DAL;
 using UnitOfWork.Models;
 
 namespace UnitOfWork.Repositories
@@ -10,14 +9,7 @@ namespace UnitOfWork.Repositories
     //instead of each method
     public class FooRepository
     {
-        private readonly PetaPocoUnitOfWork _unitOfWork;
-
-        public FooRepository(PetaPocoUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
-
-        public MyDbEntity Get(long id)
+        public MyDbEntity Get(IUnitOfWork uow, long id)
         {
             var sql = @"
                 SELECT *
@@ -25,17 +17,17 @@ namespace UnitOfWork.Repositories
                 WHERE id = @id
             ";
 
-            return _unitOfWork.Database.Fetch<MyDbEntity>(sql, new { id = id}).SingleOrDefault();
+            return uow.Database.Fetch<MyDbEntity>(sql, new { id = id}).SingleOrDefault();
         }
 
-        public void Save(MyDbEntity entity)
+        public void Save(IUnitOfWork uow, MyDbEntity entity)
         {
-            _unitOfWork.Database.Save(entity);
+            uow.Database.Save(entity);
         }
 
-        public void Delete(MyDbEntity entity)
+        public void Delete(IUnitOfWork uow, MyDbEntity entity)
         {
-            _unitOfWork.Database.Delete(entity);
+            uow.Database.Delete(entity);
         }
     }
 }
