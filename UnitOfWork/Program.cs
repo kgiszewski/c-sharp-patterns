@@ -9,7 +9,7 @@ namespace UnitOfWork
         static void Main(string[] args)
         {
             //a unit of work is created
-            using (var uow = new PetaPocoUnitOfWork())
+            using (var uow = UnitOfWorkFactory.Get())
             {
                 //get an instance of a repo
                 var repo = new FooRepository();
@@ -20,7 +20,7 @@ namespace UnitOfWork
             }
 
             //let's save something
-            using (var uow = new PetaPocoUnitOfWork())
+            using (var uow = UnitOfWorkFactory.Get())
             {
                 var repo = new FooRepository();
 
@@ -36,7 +36,7 @@ namespace UnitOfWork
             }
 
             //let's delete something
-            using (var uow = new PetaPocoUnitOfWork())
+            using (var uow = UnitOfWorkFactory.Get())
             {
                 var repo = new FooRepository();
 
@@ -52,7 +52,7 @@ namespace UnitOfWork
             }
 
             //the best part of a UOW pattern is that you can do many things across more than one repo and have them linked as a single transaction
-            using (var uow = new PetaPocoUnitOfWork())
+            using (var uow = UnitOfWorkFactory.Get())
             {
                 //look, we need to manipulate TWO repos in the same transaction
                 var fooRepo = new FooRepository();
