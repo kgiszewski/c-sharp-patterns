@@ -11,16 +11,21 @@ The problem with the naive solution is that a race condition still exists. Two q
 
 Distributed locking requires that a semaphore be used to ensure that one and only one process can work a particular message at a time. This can be done with two simple methods:
 
-- bool AcquireLock(string semaphore)
-- void ReleaseLock(string semaphore)
+```
+bool AcquireLock(string semaphore)
+void ReleaseLock(string semaphore)
+```
 
 The semaphore is a deterministic value based on whatever you want so long as it is unique to the task at hand. Some examples of a good semaphore might be:
 
-- customerId + "collectPayment"
-- customerId + "refundPayment"
+```
+customerId + "collectPayment"
+customerId + "refundPayment"
+```
 
 The actual usage of our distributed lock would be the following pseduocode:
 
+```
 if(AcquireLock("1234collectPayment") 
 {
     //collectPayment
@@ -29,6 +34,7 @@ else
 {
     //could not get a lock, ignore this message as someone else is working on this already
 }
+```
 
 ## Common Uses
 The exact implementation of you distributed lock can vary easily. You could choose to:
